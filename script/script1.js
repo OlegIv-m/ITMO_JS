@@ -38,9 +38,9 @@ alert("Задача№5");
 var ax = 0,ay = 0,az = 0,
 	bx = 0,by = 2,bz = 0,
 	cx = 2,cy = 0,cz = 0;
-var AB = Math.pow((( ax - bx )**2 + ( ay - by )**2 + ( az - bz )**2), 0.5);
-var AC = Math.pow((( ax - cx )**2 + ( ay - cy )**2 + ( az - cz )**2), 0.5);
-var BC = Math.pow((( bx - cx )**2 + ( by - cy )**2 + ( bz - cz )**2), 0.5);
+var AB = ( ax - bx )**2 + ( ay - by )**2 + ( az - bz )**2;
+var AC = ( ax - cx )**2 + ( ay - cy )**2 + ( az - cz )**2;
+var BC = ( bx - cx )**2 + ( by - cy )**2 + ( bz - cz )**2;
 
 var gipotenusa = ( AB > AC) ? AB : AC;
 gipotenusa = ( gipotenusa > BC ) ? gipotenusa : BC;
