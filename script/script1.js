@@ -3,7 +3,7 @@ alert("Задача№1");
 const SOTKA = 100;
 var square = 10*SOTKA;
 var row = 15, line = 25;
-alert("Ответ на первую задачу: " + (square-row*line));
+alert("Ответ на первую задачу: " + (square%row*line));
 
 //Задача№2
 alert("Задача№2");
@@ -19,7 +19,7 @@ alert("Функция нахождения наименьшего из 3 чис�
 var x = prompt("Введите первое число x=", 10);
 var y = prompt("Введите первое число y=", 20);
 var z = prompt("Введите первое число z=", 30);
-min = ( x > y) ? y : x;
+var min = ( x > y) ? y : x;
 min = ( min > z ) ? z : min;
 alert("Ответ на третью задачу:" + min);
 
@@ -28,16 +28,16 @@ alert("Задача№4");
 const BASE = 10;
 var m,n;
 m = prompt("Введите число m:", 8), n = prompt("Введите число n:", 11);
-var first = m > 0 ? m : -m,
-	second = n > 0 ? n : -n;
+var first = BASE - m,
+	second = BASE - n;
 console.log("Задача №4: \n");
-console.log("min " + ((BASE - first) > (BASE - first)) ? "n="+n : "m="+m);
+console.log("min " + ((Math.abs(first) < Math.abs(second)) ? "m="+m : "n="+n));
 
 //Задача№5
 alert("Задача№5");
-var ax = 1,ay = 1,az = 0,
-	bx = 1,by = 3,bz = 0,
-	cx = 5,cy = 0,cz = 0;
+var ax = 0,ay = 0,az = 0,
+	bx = 0,by = 2,bz = 0,
+	cx = 2,cy = 0,cz = 0;
 var AB = Math.pow((( ax - bx )**2 + ( ay - by )**2 + ( az - bz )**2), 0.5);
 var AC = Math.pow((( ax - cx )**2 + ( ay - cy )**2 + ( az - cz )**2), 0.5);
 var BC = Math.pow((( bx - cx )**2 + ( by - cy )**2 + ( bz - cz )**2), 0.5);
@@ -45,4 +45,5 @@ var BC = Math.pow((( bx - cx )**2 + ( by - cy )**2 + ( bz - cz )**2), 0.5);
 var gipotenusa = ( AB > AC) ? AB : AC;
 gipotenusa = ( gipotenusa > BC ) ? gipotenusa : BC;
 (gipotenusa == AB) ? (catetA = AC, catetB = BC ) : (gipotenusa == AC ) ? (catetA = AB, catetB = BC ) : (catetA = AB, catetB = AC );
-alert("Треугольник " + ((gipotenusa**2 == catetA**2 + catetB**2) ? "прямоугольный" : " не прямоугольный"));
+var triangle = (gipotenusa**2 == catetA**2 + catetB**2) | (catetA == catetB) ? "прямоугольный" : " не прямоугольный";
+alert("Треугольник " + triangle);
