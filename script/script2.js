@@ -64,15 +64,15 @@ switch ( lengthType ) {
 let num = +prompt("", 555);
 let message = "";
 
-switch ( ( num >= -999 ) && ( num <= 999) {
-	case ( num < 0 ):
+if( num > 0 {
+	message += "";	
+} else if ( num < 0 ) {
 		message += "";
-		break;
-	case ( num > 0 ):
+	} else {
 		message += "";
-		break;
-	case ( num ;
-	case;
-	case;
-	default:
+	}
 }
+	
+if( num >= 100 ) {
+	message += "";
+} else if (
