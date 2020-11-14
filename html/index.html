@@ -9,55 +9,140 @@
 		<h1>Javascript!</h1>
 		<div>
 			<pre>
-				//Задача№1
-				alert("Задача№1");
-				const SOTKA = 100;
-				var square = 10*SOTKA;
-				var row = 15, line = 25;
-				alert("Ответ на первую задачу: " + (square%row*line));
+				//Задача №1
 
-				//Задача№2
-				alert("Задача№2");
-				const SQUARE_DECIMETER = 100;
-				let oval = 15*SQUARE_DECIMETER;
-				let oval_slice = 600;
-				alert("Ответ на  вторую задачу: " + (oval - oval_slice) + " m2");
+				let month = Number(prompt("Введите номер месяца"));
+
+				switch ( month ) {
+					case 2:
+					case 3:
+					case 4:
+						alert("Весна");
+						break;
+					case 5:
+					case 6:
+					case 7:
+						alert("Лето");
+						break;
+					case 8:
+					case 9:
+					case 10:
+						alert("Осень");
+						break;
+					case 1:
+					case 11:
+					case 12:
+						alert("Зима");
+						break;
+					default:
+						alert("Вы ввели не число месяца!");
+				}
+
+				//Задача №2
+
+				let lengthType = +prompt("Введите единицу длины." + 
+										 "1 — дециметр, 2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр", 3);
+				let L = +prompt("Введите длину", 100);
+
+				switch ( lengthType ) {
+					//дециметр
+					case 1:
+						alert(L * 0.1 + " метров");
+						break;
+					//километр
+					case 2:
+						alert(L * 1000 + " метров");
+						break;
+					//метр
+					case 3:
+						alert( L + " метров");
+						break;
+					//миллиметр
+					case 4:
+						alert(L * 0.001 + " метров");
+						break;
+					//сантиметр
+					case 5:
+						alert(L * 0.01 + " метров");
+						break;
+					default :
+						alert("Вы ввели неверную единицу измерения!");
+				}
 
 
-				//Задача№3
-				alert("Задача№3");
-				alert("Функция нахождения наименьшего из 3 чисел");
-				var x = prompt("Введите первое число x=", 10);
-				var y = prompt("Введите первое число y=", 20);
-				var z = prompt("Введите первое число z=", 30);
-				var min = ( x > y) ? y : x;
-				min = ( min > z ) ? z : min;
-				alert("Ответ на третью задачу:" + min);
+				//Задача №3
 
-				//Задача№4
-				alert("Задача№4");
-				const BASE = 10;
-				var m,n;
-				m = prompt("Введите число m:", 8), n = prompt("Введите число n:", 11);
-				var first = BASE - m,
-					second = BASE - n;
-				console.log("Задача №4: \n");
-				console.log("min " + ((Math.abs(first) < Math.abs(second)) ? "m="+m : "n="+n));
+				let num = +prompt("Введите число  в диапазоне от -999 до 999", 555);
+				let message = "";
+				const lowRange = -999, highRange = 999;
+				// положительное или отрицательное
+				if( num > 0 ) {
+					message += "положительное ";
+				} else if ( num < 0 ) {
+					message += "отрицательное ";
+				} else {
 
-				//Задача№5
-				alert("Задача№5");
-				var ax = 0,ay = 0,az = 0,
-					bx = 0,by = 2,bz = 0,
-					cx = 2,cy = 0,cz = 0;
-				var AB = Math.pow((( ax - bx )**2 + ( ay - by )**2 + ( az - bz )**2), 0.5);
-				var AC = Math.pow((( ax - cx )**2 + ( ay - cy )**2 + ( az - cz )**2), 0.5);
-				var BC = Math.pow((( bx - cx )**2 + ( by - cy )**2 + ( bz - cz )**2), 0.5);
+				}
+				// разряд числа
+				if ( Math.abs( num ) >= 100 ) {
+					message += "трехзначное ";
+				} else if ( Math.abs( num ) >= 10 ) {
+					message += "двузначное ";
+				} else {
+					message += "однозначное ";
+				}
 
-				var gipotenusa = ( AB > AC) ? AB : AC;
-				gipotenusa = ( gipotenusa > BC ) ? gipotenusa : BC;
-				(gipotenusa == AB) ? (catetA = AC, catetB = BC ) : (gipotenusa == AC ) ? (catetA = AB, catetB = BC ) : (catetA = AB, catetB = AC );
-				var triangle = (gipotenusa**2 == catetA**2 + catetB**2) | (catetA == catetB) ? "прямоугольный" : " не прямоугольный";
-				alert("Треугольник " + triangle);
+				message += "число";
+				// нулевое число
+				if ( num == 0 ) {
+					message = "нулевое число";
+				}
+
+				console.log(message);
+
+
+				//Задача №4
+
+				for (let i = 1 ; i <=100; i++){
+					if( !( i % 3 ) && !( i % 5 ) ){
+						console.log("ThreeFive");
+						continue;
+					}
+					if ( !( i % 3 ) ) {
+						console.log("Three");
+						continue;
+					}
+					if ( !( i % 5 ) ) {
+						console.log("Five");
+						continue;
+					}
+					console.log(i);
+				 }
+				 
+				 //Задача №5
+				 
+				 let year = prompt("Введите год", 2020);
+				 
+				 if (  year % 4  ) {
+					 console.log("Не высокосный год");
+				 } else if ( year % 400 )  {
+					 console.log("Не высокосный год");
+				 } else {
+					 console.log("Высокосный год");
+				 }
+				 
+				//Задача №6
+
+				let plates = prompt("Количество тарелок", 10);
+				let gel = prompt("Количество моющего средства", 10);
+				const COEFF = 0.5;
+
+				while ( plates > 0 && gel > 0 ) {
+					plates--;
+					gel -= 0.5;
+				}
+
+				console.log( "Количество непомытых тарелок: " + plates + " " + "Количество оставшегося моющего средства: " + gel );
 
 				</pre>
 		</div>
