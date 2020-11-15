@@ -14,23 +14,23 @@
 				let month = Number(prompt("Введите номер месяца"));
 
 				switch ( month ) {
-					case 2:
 					case 3:
 					case 4:
+					case 5:
 						alert("Весна");
 						break;
-					case 5:
 					case 6:
 					case 7:
+					case 8:
 						alert("Лето");
 						break;
-					case 8:
 					case 9:
 					case 10:
+					case 11:
 						alert("Осень");
 						break;
 					case 1:
-					case 11:
+					case 2:
 					case 12:
 						alert("Зима");
 						break;
@@ -45,23 +45,23 @@
 				let L = +prompt("Введите длину", 100);
 
 				switch ( lengthType ) {
-					//дециметр
+					// дециметр
 					case 1:
 						alert(L * 0.1 + " метров");
 						break;
-					//километр
+					// километр
 					case 2:
 						alert(L * 1000 + " метров");
 						break;
-					//метр
+					// метр
 					case 3:
 						alert( L + " метров");
 						break;
-					//миллиметр
+					// миллиметр
 					case 4:
 						alert(L * 0.001 + " метров");
 						break;
-					//сантиметр
+					// сантиметр
 					case 5:
 						alert(L * 0.01 + " метров");
 						break;
@@ -107,14 +107,15 @@
 					if( !( i % 3 ) && !( i % 5 ) ){
 						console.log("ThreeFive");
 						continue;
-					}
-					if ( !( i % 3 ) ) {
-						console.log("Three");
-						continue;
-					}
-					if ( !( i % 5 ) ) {
-						console.log("Five");
-						continue;
+					} else  {
+						if ( !( i % 3 ) ) {
+							console.log("Three");
+							continue;
+						}
+						if ( !( i % 5 ) ) {
+							console.log("Five");
+							continue;
+						}
 					}
 					console.log(i);
 				 }
@@ -123,12 +124,10 @@
 				 
 				 let year = prompt("Введите год", 2020);
 				 
-				 if (  year % 4  ) {
-					 console.log("Не высокосный год");
-				 } else if ( year % 400 )  {
-					 console.log("Не высокосный год");
-				 } else {
+				 if (  !(year % 4) && !!(year % 100)  ) {
 					 console.log("Высокосный год");
+				 } else {
+					 console.log("Не высокосный год");
 				 }
 				 
 				//Задача №6
@@ -137,7 +136,7 @@
 				let gel = prompt("Количество моющего средства", 10);
 				const COEFF = 0.5;
 
-				while ( plates > 0 && gel > 0 ) {
+				while ( plates >= 1 && gel >= 0.5 ) {
 					plates--;
 					gel -= 0.5;
 				}
