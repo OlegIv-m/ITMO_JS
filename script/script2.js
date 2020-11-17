@@ -122,6 +122,14 @@ for (let i = 1 ; i <=100; i++){
  } else {
 	 console.log("Не высокосный год");
  }
+
+ /*let year = prompt("Введите год", 2020);
+ 
+ if ( !(year % 4) && !((year % 400 ) && !(year % 100)) )  {
+		console.log("Высокосный год");
+ } else {
+	 console.log("Не высокосный год");
+ }*/
  
 //Задача №6
 
