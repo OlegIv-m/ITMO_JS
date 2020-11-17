@@ -144,3 +144,38 @@ if( arr1.length == 1){
 	console.log("0");
 }
 
+//Задача №5 (version 3)
+
+let arr1  = [2,2,7,4,1,8,1,25,300];
+let max1 , max2;
+let i = 10;
+
+// sort array and delete elements
+
+while ( arr1.length > 1) {
+	max1 = arr1[0];
+	for ( let i = 0; i < arr1.length ; i++) {
+		if ( max1 < arr1[i] ) {
+			max1 = arr1[i];
+		} 
+	}
+	arr1.splice( arr1.indexOf(max1), 1 );
+	max2 = arr1[0];
+	for ( let j = 0; j < arr1.length ; j++) {
+		if ( max2 < arr1[j] ) {
+			max2 = arr1[j];
+		} 
+	}
+	arr1.splice( arr1.indexOf(max2), 1 );
+	if ( max1 - max2 ) {
+		arr1.push(max1 - max2);
+	}
+}
+//output results
+if( arr1.length == 1){
+	console.log(arr1[0]);
+} else {
+	console.log("0");
+}
+
+
