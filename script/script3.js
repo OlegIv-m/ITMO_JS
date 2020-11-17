@@ -7,7 +7,7 @@ let C = Array(...B, ...A);
 
 console.log(C);
 
-//or
+// or
 
  // C = B.concat(A);
  
@@ -49,7 +49,7 @@ for ( let i = 0 ; i < length ; i++ ){
 let arr = [12,4,3,-10,1,20];
 
 let min = arr[0], max = arr[0];
-let length = arr.length;
+length = arr.length;
 	
 for( let i = 0; i < length ; i++ ) {
 	if ( min > arr[i] ) {
@@ -82,37 +82,65 @@ console.log("count= " + countNum);
 
 //Задача №5
 
-let arr  = [2,2,7,4,1,8,1,15];
+// let arr  = [2,2,7,4,1,8,1,15];
 
-while ( arr.length < 1) {
-	arr.push(prompt("Добавьте элементы",10));
-}
+// while ( arr.length < 1) {
+	// arr.push(prompt("Добавьте элементы",10));
+// }
 
-while ( true ) {
-	let max1 = arr[0], max2 = arr[1];
-	let length = arr.length;
+// while ( true ) {
+	// let max1 = arr[0], max2 = arr[1];
+	// let length = arr.length;
 	
 	// find first and second max in arr
 	
-	for( let i = 0; i < length ; i++ ) {
-		if ( max1 < arr[i] ) {
-			max1 = arr[i];
-		}
-		if ( max2 < arr[i] && max1 != arr[i]) {
-			max2 = arr[i];	
-		}
-	}
+	// for( let i = 0; i < length ; i++ ) {
+		// if ( max1 < arr[i] ) {
+			// max1 = arr[i];
+		// }
+		// if ( max2 < arr[i] && max1 != arr[i]) {
+			// max2 = arr[i];	
+		// }
+	// }
 	//annigilate
-	if ( ( max1 - max2) >= 0 ) {
-		arr.splice( arr.indexOf(max1), 1, max1 - max2);
-		arr.splice( arr.indexOf(max2), 1);
+	// if ( ( max1 - max2) >= 0 ) {
+		// arr.splice( arr.indexOf(max1), 1, max1 - max2);
+		// arr.splice( arr.indexOf(max2), 1);
+	// } else {
+		// arr.splice( arr.indexOf(max1), 1);
+		// arr.splice( arr.indexOf(max2), 1);
+	// }
+	// if ( arr.length <= 1) {
+		// break;	
+	// }
+// }
+// console.log(arr);
+
+//Задача №5 (version 2)
+
+let arr1  = [2,2,7,4,1,8,1,25];
+let max1 , max2;
+let i = 10;
+
+// sort array and delete elements
+
+while ( (arr1.length > 1) && i ) {
+	arr1.sort(function(a, b) {  return b - a; } );
+	max1 = arr1[0], max2 = arr1[1];
+	if ( max1 > max2 ) {
+		arr1.push(max1 - max2);
+		arr1.shift();
+		arr1.shift();
 	} else {
-		arr.splice( arr.indexOf(max1), 1);
-		arr.splice( arr.indexOf(max2), 1);
+		arr1.shift();
+		arr1.shift();
 	}
-	if ( arr.length <= 1) {
-		break;	
-	}
+	i--;
 }
-console.log(arr);
+//output results
+if( arr1.length == 1){
+	console.log(arr1[0]);
+} else {
+	console.log("0");
+}
 
