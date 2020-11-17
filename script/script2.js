@@ -113,8 +113,12 @@ for (let i = 1 ; i <=100; i++){
  
  let year = prompt("Введите год", 2020);
  
- if (  !(year % 4) && !!(year % 100)  ) {
-	 console.log("Высокосный год");
+ if ( !(year % 4) ) {
+	 if( (year % 400 ) && !(year % 100)  )  {
+	 	console.log("Не высокосный год");
+	 } else {
+		console.log("Высокосный год");
+	 }
  } else {
 	 console.log("Не высокосный год");
  }
