@@ -9,18 +9,19 @@
  
 let a = {
     name: 'static',
-    count: 0
+    count: 9,
 }
 
-function foo(obj, propName, start){
+function foo(obj, propName){
 	let arr = [];
-	while( obj[propName]++ < start) {
+	let items = propName;
+	while( items-- != 0 ) {
 		arr.push(Object.assign({}, obj));
 	}
 	return arr;
 }
 
-console.log(foo(a, 'count', 9));
+console.log(foo(a, a.count));
 
 //Задача №2
 
