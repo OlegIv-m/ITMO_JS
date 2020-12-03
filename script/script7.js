@@ -202,7 +202,7 @@ function selectHoursWord(hour){
 		case 3:
 		case 4: return "часа";
 		default: 
-			if( hour <20) return "часов";
+			if( hour < 20) return "часов";
 			switch (hour % 10) {
 				case 1: return "час";
 				case 2: 
@@ -220,13 +220,13 @@ function selectMinutesWord(minute){
 		case 3:
 		case 4: return "минуты";
 		default: 
-			if( minute <20) return "минут";
+			if( minute < 20) return "минут";
 			switch (minute % 10) {
 				case 1: return "минута";
 				case 2: 
 				case 3:
 				case 4: return "минуты";
-				default: return "минуты";
+				default: return "минут";
 			};
 	}
 }
@@ -248,5 +248,5 @@ function dateTimer(){
 
 let newYearTimer = dateTimer();
 
-let timerTag = document.getElementById('newYearTimer');
+let timerTag = document.getElementById('newYearDiv');
 globalThis.setInterval( newYearTimer, 1000,timerTag);
